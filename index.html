@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Chart</title>
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="flex-center">
+
+  <div class="chart-container">
+
+    <!-- 
+      - #BALANCE CARD
+    -->
+
+    <div class="balance-card flex-center">
+
+      <div class="wrapper">
+        <h3 class="text">My balance</h3>
+
+        <data class="h2" value="921.48">$921.48</data>
+      </div>
+
+      <a href="#">
+        <img src="./assets/images/logo.svg" width="72" height="48" alt="logo" class="logo">
+      </a>
+
+    </div>
+
+
+
+    <!-- 
+      - #CHART CARD
+    -->
+
+    <div class="chart-card">
+
+      <h3 class="h2">Spending - Last 7 days</h3>
+
+      <table class="card-table">
+        <tbody class="table-body flex-center">
+
+          <tr class="table-row flex-center">
+            <th class="table-heading" scope="col">M</th>
+
+            <td class="table-data">
+              <div class="chart-bar" data-chart-bar="mon"></div>
+            </td>
+          </tr>
+
+          <tr class="table-row flex-center">
+            <th class="table-heading" scope="col">T</th>
+
+            <td class="table-data">
+              <div class="chart-bar" data-chart-bar="tue"></div>
+            </td>
+          </tr>
+
+          <tr class="table-row flex-center">
+            <th class="table-heading" scope="col">W</th>
+
+            <td class="table-data">
+              <div class="chart-bar" data-chart-bar="wed"></div>
+            </td>
+          </tr>
+
+          <tr class="table-row flex-center">
+            <th class="table-heading" scope="col">T</th>
+
+            <td class="table-data">
+              <div class="chart-bar" data-chart-bar="thu"></div>
+            </td>
+          </tr>
+
+          <tr class="table-row flex-center">
+            <th class="table-heading" scope="col">F</th>
+
+            <td class="table-data">
+              <div class="chart-bar" data-chart-bar="fri"></div>
+            </td>
+          </tr>
+
+          <tr class="table-row flex-center">
+            <th class="table-heading" scope="col">S</th>
+
+            <td class="table-data">
+              <div class="chart-bar" data-chart-bar="sat"></div>
+            </td>
+          </tr>
+
+          <tr class="table-row flex-center">
+            <th class="table-heading" scope="col">S</th>
+
+            <td class="table-data">
+              <div class="chart-bar" data-chart-bar="sun"></div>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+
+      <span class="tooltip text" data-tooltip></span>
+
+      <div class="wrapper flex-center">
+
+        <div class="card-meta">
+          <p class="text">Total this month</p>
+
+          <data class="meta-value" value="478.33">$478.33</data>
+        </div>
+
+        <div class="card-meta">
+          <data class="meta-value small" value="2.4">+2.4%</data>
+
+          <p class="text">from last month</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js" type="module" defer></script>
+
+</body>
+
+</html>

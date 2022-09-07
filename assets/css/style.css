@@ -1,0 +1,315 @@
+/*-----------------------------------*\
+  #style.css
+\*-----------------------------------*/
+
+/**
+ * copyright 2022 codewithsadee
+ */
+
+
+
+
+
+/*-----------------------------------*\
+  #CUSTOM PROPERTY
+\*-----------------------------------*/
+
+:root {
+
+  /**
+   * colors
+   */
+
+  --medium-slate-blue: hsl(240, 73%, 65%);
+  --space-cadet_10: hsl(226, 54%, 26%, 0.1);
+  --space-cadet: hsl(226, 54%, 26%);
+  --ghost-white: hsl(227, 69%, 97%);
+  --cool-gray: hsl(226, 19%, 63%);
+  --cultured: hsl(0, 0%, 95%);
+  --white: hsl(0, 0%, 100%);
+
+  /**
+   * typography
+   */
+
+  --ff-dm-sans: 'Roboto', sans-serif;
+  --ff-helvetica: 'Helvetica', sans-serif;
+
+  --fs-1: 3rem;
+  --fs-2: 2.4rem;
+  --fs-3: 1.5rem;
+  --fs-4: 1.2rem;
+
+  --fw-500: 500;
+  --fw-600: 600;
+  --fw-700: 700;
+
+  /**
+   * shadow
+   */
+
+  --shadow: 1px 1px 3px hsla(0, 0%, 0%, 0.15);
+
+  /**
+   * radius
+   */
+
+  --radius-5: 5px;
+  --radius-15: 15px;
+
+  /**
+   * transition
+   */
+
+  --transition-1: 0.25s ease;
+  --transition-2: 1s ease;
+
+}
+
+
+
+
+
+/*-----------------------------------*\
+  #RESET
+\*-----------------------------------*/
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+span,
+data { display: block; }
+
+img { height: auto; }
+
+table,
+tbody,
+tr,
+th,
+td {
+  all: unset;
+}
+
+html {
+  font-family: var(--ff-dm-sans);
+  font-size: 10px;
+}
+
+body {
+  background-color: var(--ghost-white);
+  color: var(--cool-gray);
+  font-size: 1.6rem;
+  padding-inline: 15px;
+  min-height: 100vh;
+}
+
+
+
+
+
+/*-----------------------------------*\
+  #REUSED STYLE
+\*-----------------------------------*/
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.balance-card,
+.chart-card {
+  padding: 20px;
+  border-radius: var(--radius-15);
+}
+
+.text { font-size: var(--fs-3); }
+
+.h2 { font-size: var(--fs-2); }
+
+
+
+
+
+/*-----------------------------------*\
+  #BALANCE CARD
+\*-----------------------------------*/
+
+.chart-container {
+  width: 100%;
+  max-width: 540px;
+  margin-inline: auto;
+}
+
+.balance-card {
+  background-color: var(--medium-slate-blue);
+  color: var(--white);
+  justify-content: space-between;
+  margin-block-end: 15px;
+}
+
+.balance-card .text {
+  font-weight: unset;
+  margin-block-end: 5px;
+}
+
+.balance-card .h2 { font-weight: var(--fw-700); }
+
+.balance-card .logo { width: 60px; }
+
+
+
+
+
+/*-----------------------------------*\
+  #CHART CARD
+\*-----------------------------------*/
+
+.chart-card {
+  position: relative;
+  background-color: var(--white);
+}
+
+.chart-card .h2 {
+  color: var(--space-cadet);
+  font-weight: var(--fw-500);
+  margin-block-end: 50px;
+}
+
+.chart-card .card-table {
+  display: block;
+  padding-block-end: 24px;
+  border-block-end: 1px solid var(--space-cadet_10);
+  margin-block-end: 24px;
+}
+
+.chart-card .table-body {
+  justify-content: space-evenly;
+  align-items: stretch;
+  gap: 12px;
+}
+
+.chart-card .table-row {
+  flex-direction: column-reverse;
+  justify-content: flex-start;
+  gap: 10px;
+  min-height: calc(150px + 31px);
+}
+
+.chart-card .table-heading {
+  color: var(--space-cadet);
+  font-family: var(--ff-helvetica);
+  font-size: var(--fs-4);
+}
+
+.chart-card .table-data {
+  min-width: 20px;
+  height: 100%;
+  background-color: var(--cultured);
+  cursor: pointer;
+}
+
+.chart-card .chart-bar {
+  background-color: var(--medium-slate-blue);
+  height: 100%;
+  transform-origin: bottom;
+  transition: transform var(--transition-2);
+}
+
+.chart-card .chart-bar:hover { opacity: 0.75; }
+
+.tooltip {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--white);
+  color: var(--space-cadet);
+  font-family: var(--ff-helvetica);
+  font-weight: var(--fw-600);
+  padding: 8px;
+  border: 1px solid var(--cultured);
+  border-radius: var(--radius-5);
+  box-shadow: var(--shadow);
+  pointer-events: none;
+  opacity: 0;
+  transition: var(--transition-1);
+}
+
+.tooltip.active { opacity: 1; }
+
+.chart-card .wrapper {
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.chart-card .meta-value {
+  color: var(--space-cadet);
+  font-weight: var(--fw-500);
+  margin-block-start: 5px;
+}
+
+.chart-card .meta-value:not(.small) { font-size: var(--fs-1); }
+
+.chart-card .card-meta:last-child {
+  align-self: flex-end;
+  text-align: right;
+}
+
+
+
+
+
+/*-----------------------------------*\
+  #MEDIA QUERIES
+\*-----------------------------------*/
+
+/**
+ * responsive for large than 768px screen
+ */
+
+@media (min-width: 768px) {
+
+  /**
+   * REUSED STYLE
+   */
+
+  :root {
+
+    /**
+     * typography
+     */
+
+    --fs-1: 4.8rem;
+    --fs-2: 3.2rem;
+    --fs-3: 1.8rem;
+    --fs-4: 1.5rem;
+
+  }
+
+
+
+  /**
+   * BALANCE CARD
+   */
+
+  .balance-card { padding: 25px 30px; }
+
+  .balance-card .logo { width: 70px; }
+
+
+
+  /**
+   * CHART CARD
+   */
+
+  .chart-card { padding: 30px 40px; }
+
+  .chart-card .meta-value.small { font-size: 2rem; }
+
+}

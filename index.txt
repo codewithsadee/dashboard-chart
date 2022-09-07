@@ -1,0 +1,22 @@
+Dashboard Chart
+
+My balance
+$921.48
+
+alt = logo
+
+Spending - Last 7 days
+
+M
+T
+W
+T
+F
+S
+S
+
+Total this month
+$478.33
+
++2.4%
+from last month
